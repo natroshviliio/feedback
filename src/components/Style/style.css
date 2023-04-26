@@ -649,6 +649,7 @@ body::-webkit-scrollbar {
   gap: 1rem;
 }
 .statistic2 .rating_container .rating_count {
+  max-height: 180px;
   padding: 10px;
   border: 1px solid #adadad;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -676,6 +677,8 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 .statistic2 .rating_container .rating_stars_container {
+  max-height: 180px;
+  overflow-y: auto;
   display: flex;
   padding: 15px;
   flex-wrap: wrap;
@@ -687,7 +690,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   padding: 5px;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
   border: 1px solid #aaa;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
@@ -696,6 +699,7 @@ body::-webkit-scrollbar {
 }
 .statistic2 .rating_container .rating_stars_container .each_rating_stars .rating_each_stars_container {
   display: flex;
+  align-items: center;
   gap: 4px;
 }
 .statistic2 .rating_container .rating_stars_container .each_rating_stars .rating_each_stars_container .rating_stars {
@@ -728,7 +732,6 @@ body::-webkit-scrollbar {
 }
 .statistic2 .rating_container_with_questions .rating_container_each_rate .rating_container_each_rate_rates .rating_container_each_rate_rates_block {
   width: 100%;
-  height: 100%;
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -737,8 +740,12 @@ body::-webkit-scrollbar {
   background-color: white;
 }
 .statistic2 .rating_container_with_questions .rating_container_each_rate .rating_container_each_rate_rates .rating_container_each_rate_rates_block .rating_container_block_answer {
+  width: 100%;
+  height: 20px;
+  display: flex;
   font-family: "BPG Arial", sans-serif;
   font-size: 0.85rem;
+  overflow-x: auto;
 }
 .statistic2 .rating_container_with_questions .rating_container_each_rate .rating_container_each_rate_rates .rating_container_each_rate_rates_block .rating_container_block_rate {
   width: 100%;

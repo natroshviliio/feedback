@@ -31,7 +31,7 @@ const Statistic = () => {
     }
 
     const getRating = async () => {
-        await axios.get("http://192.168.43.210:5000/rating")
+        await axios.get(`http://192.168.43.210:5000/rating?startDate=${startDate}&endDate=${endDate}`)
             .then(res => {
                 if (res.status === 200) {
                     setRating(res.data)
@@ -53,6 +53,7 @@ const Statistic = () => {
     const filterWithDate = () => {
         getCountOfVotesData();
         getCountOfVotes();
+        getRating();
     }
 
     const rateEmojies = [
@@ -108,6 +109,7 @@ const Statistic = () => {
                                             </div>
                                         )
                                     })}
+                                    {x.rating}
                                 </div>
                             </div>
                         )
@@ -119,7 +121,7 @@ const Statistic = () => {
                     return (
                         <div key={x.Id} className="rating_container_each_rate">
                             <div className="rating_container_each_rate_question">
-                                {x.question}
+                                {x.question} - სულ({x.sumOfVotes})
                             </div>
                             <div className="rating_container_each_rate_rates">
                                 {x.votes.map(y => {
